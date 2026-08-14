@@ -1,19 +1,40 @@
-Capstone: Delivery Delay Prediction
-Model
-Random Forest Classifier (tuned via RandomizedSearchCV)
-Task
-Binary classification — predict whether an order will be delivered late (`is\_late`), at order-placement time
-Final Metrics (test set)
-F1-macro: 0.6928
-ROC-AUC: 0.8313
-Precision: 0.4797
-Recall: 0.3877
-Accuracy: 0.9196
-Files
-`Techtrek\_Project\_Final/` — full analysis notebook (all pipeline steps)
-`data/clean\_orders.csv` — cleaned, feature-engineered dataset
-`model/best\_model.pkl` — final tuned Random Forest model (joblib)
-`visuals/` — key exported plots
-`reports/model\_comparison.csv` — full algorithm comparison table (post-tuning)
-Dataset
-Brazilian E-Commerce Public Dataset by Olist (Kaggle)
+# 🚚 Capstone: Delivery Delay Prediction
+
+Predicting late order deliveries at placement time using machine learning on e-commerce transaction data.
+
+---
+
+##  Project Overview
+This project predicts whether a customer's order will experience a delivery delay (`is_late`) at the exact moment the order is placed. By identifying potential delays early, logistics managers and e-commerce platforms can proactively address supply chain bottlenecks and improve customer satisfaction.
+
+* **Dataset:** [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) (Kaggle)
+* **Task:** Binary Classification
+* **Selected Model:** **Random Forest Classifier** (tuned via `RandomizedSearchCV`)
+
+---
+
+## 📊 Final Model Performance
+
+Evaluated on the holdout **test set**:
+
+| Metric | Score |
+| :--- | :---: |
+| **ROC-AUC** | **`0.8313`** |
+| **Accuracy** | **`0.9196`** |
+| **F1-Macro** | `0.6928` |
+| **Precision** | `0.4797` |
+| **Recall** | `0.3877` |
+
+---
+
+## 📂 Repository Structure
+
+```text
+├── Techtrek_Project_Final/   # Full analysis notebook containing the complete pipeline
+├── data/
+│   └── clean_orders.csv      # Cleaned and feature-engineered dataset
+├── model/
+│   └── best_model.pkl        # Serialized tuned Random Forest model (joblib)
+├── reports/
+│   └── model_comparison.csv  # Post-tuning evaluation across all benchmarked algorithms
+└── visuals/                  # Key exported plots & feature importance charts
